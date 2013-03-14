@@ -1,0 +1,5 @@
+*
+!.gitignore
+!init.el
+!elisp/
+!elisp/*.el
