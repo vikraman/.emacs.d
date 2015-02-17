@@ -326,6 +326,7 @@
 
 (use-package ensime
   :ensure t
+  :defer t
   :config
   (setq ensime-sbt-perform-on-save "compile")
   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
