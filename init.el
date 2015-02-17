@@ -157,5 +157,22 @@
   :ensure t
   :init (exec-path-from-shell-initialize))
 
+;; Theme
+(use-package color-theme
+  :ensure t)
+(use-package color-theme-solarized
+  :ensure t
+  :init (progn
+          (setq frame-background-mode 'dark)
+          (load-theme 'solarized 'no-confirm))
+  :config t
+  (custom-set-faces
+   '(show-paren-match
+     ((t (:foreground nil ,@fmt-bold ,@bg-base02))))
+   ))
+
+;; Use the Source Code Pro font
+(setq default-frame-alist '((font . "Source Code Pro SemiBold-10")))
+
 (provide 'init)
 ;;; init.el ends here
