@@ -3,8 +3,14 @@
 
 ;;; Code:
 
-(require 'auto-complete)
-(require 'cl)
+(require 'use-package)
+
+(use-package dart-mode
+  :ensure t
+  :defer t
+  :init (require 'cl)
+  :config
+  (add-hook 'before-save-hook #'dartformat-before-save))
 
 (defun dart--goto-line (line)
   (goto-char (point-min))
@@ -119,9 +125,6 @@ buffer."
 (defun dartformat-before-save ()
   (interactive)
   (when (eq major-mode 'dart-mode) (dartformat)))
-
-;; (add-to-list 'ac-modes 'dart-mode)
-(add-hook 'before-save-hook #'dartformat-before-save)
 
 (provide 'dart-init)
 ;;; dart-init.el ends here
