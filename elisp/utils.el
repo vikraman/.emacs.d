@@ -212,6 +212,9 @@
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C-<" . mc/mark-all-like-this)))
 
+;; paradox
+(use-package paradox :ensure t)
+
 ;; pretty-mode
 (use-package pretty-mode
   :ensure t
