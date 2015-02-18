@@ -34,6 +34,10 @@
   (setq ag-reuse-window 't)
   (setq ag-reuse-buffers 't))
 
+;; conf-mode
+(add-hook 'conf-mode-hook
+          '(lambda () (setq conf-assignment-column 12)))
+
 ;; css-mode
 (use-package css-mode
   :ensure t
