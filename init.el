@@ -161,7 +161,7 @@
 (use-package color-theme
   :ensure t)
 (use-package color-theme-solarized
-  :ensure t
+  :load-path "themes/emacs-color-theme-solarized"
   :init (progn
           (setq frame-background-mode 'dark)
           (load-theme 'solarized 'no-confirm))
