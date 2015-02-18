@@ -213,7 +213,11 @@
 	 ("C-c C-<" . mc/mark-all-like-this)))
 
 ;; paradox
-(use-package paradox :ensure t)
+(use-package paradox
+  :ensure t
+  :defer t
+  :config (setq paradox-github-token t
+                paradox-execute-asynchronously nil))
 
 ;; pretty-mode
 (use-package pretty-mode
