@@ -333,8 +333,7 @@
   :defer t
   :config
   (setq ensime-sbt-perform-on-save "compile")
-  (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-  (add-hook 'ensime-source-buffer-saved-hook 'ensime-format-source))
+  (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
 
 ;; slime
 (use-package slime
