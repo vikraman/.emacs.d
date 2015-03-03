@@ -115,6 +115,12 @@
 ;; geiser
 (use-package geiser :ensure t)
 
+;; diff-hl-mode
+(use-package diff-hl
+  :ensure t
+  :defer t
+  :init (diff-hl-mode))
+
 ;; haskell
 (load "haskell-init")
 
