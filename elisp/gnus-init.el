@@ -3,7 +3,7 @@
 
 ;;; Code:
 
-(require use-package)
+(require 'use-package)
 
 (use-package gnus
   :config
