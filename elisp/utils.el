@@ -361,12 +361,10 @@
 (use-package smart-mode-line
   :ensure t
   :init (progn
+          (use-package smart-mode-line-powerline-theme :ensure t)
 	  (setq sml/no-confirm-load-theme t)
+          (setq sml/theme 'powerline)
 	  (sml/setup)))
-
-(use-package smart-mode-line-powerline-theme
-  :ensure t
-  :init (sml/apply-theme 'powerline))
 
 ;; smartparens
 (load "sp-init")
