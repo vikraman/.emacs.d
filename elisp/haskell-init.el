@@ -6,8 +6,6 @@
 ;; haskell modes
 (require 'shm)
 (require 'hindent)
-(require 'shm-case-split)
-(require 'shm-reformat)
 
 (require 'haskell-mode)
 (require 'hindent)
