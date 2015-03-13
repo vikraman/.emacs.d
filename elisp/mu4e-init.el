@@ -108,6 +108,10 @@
 (add-to-list 'mu4e-view-actions
              '("ViewInBrowser" . mu4e-action-view-in-browser) t)
 
+;; html2text for html emails
+(require 'mu4e-contrib)
+(setq mu4e-html2text-command 'mu4e-shr2text)
+
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
 
