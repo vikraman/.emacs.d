@@ -128,6 +128,12 @@
 (autoload 'run-coq-other-frame "inferior-coq"
   "Run an inferior Coq process in a new frame." t)
 
+;; proofgeneral
+(custom-set-faces
+   '(proof-locked-face
+     ((t (:background "gray11")))
+   ))
+
 ;; vc-darcs
 (use-package vc-darcs
   :ensure t
