@@ -119,6 +119,15 @@
     "The face used for record types."
     ))
 
+;; coq
+(setq auto-mode-alist (cons '("\\.v$" . coq-mode) auto-mode-alist))
+(autoload 'coq-mode "coq" "Major mode for editing Coq vernacular." t)
+(autoload 'run-coq "inferior-coq" "Run an inferior Coq process." t)
+(autoload 'run-coq-other-window "inferior-coq"
+  "Run an inferior Coq process in a new window." t)
+(autoload 'run-coq-other-frame "inferior-coq"
+  "Run an inferior Coq process in a new frame." t)
+
 ;; vc-darcs
 (use-package vc-darcs
   :ensure t
