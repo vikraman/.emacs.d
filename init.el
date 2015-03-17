@@ -66,7 +66,7 @@
 ;; unicode fonts
 (use-package unicode-fonts
   :ensure t
-  :init (unicode-fonts-setup))
+  :config (unicode-fonts-setup))
 
 ;; Ending newline
 (setq require-final-newline t)
@@ -155,17 +155,16 @@
 (setenv "EMACS" "1")
 (use-package exec-path-from-shell
   :ensure t
-  :init (exec-path-from-shell-initialize))
+  :config (exec-path-from-shell-initialize))
 
 ;; Theme
 (use-package color-theme
   :ensure t)
 (use-package color-theme-solarized
   :load-path "themes/emacs-color-theme-solarized"
-  :init (progn
-          (setq frame-background-mode 'dark)
-          (load-theme 'solarized 'no-confirm))
-  :config t
+  :init (setq frame-background-mode 'dark)
+  :config
+  (load-theme 'solarized 'no-confirm)
   (custom-set-faces
    '(show-paren-match
      ((t (:foreground nil ,@fmt-bold ,@bg-base02))))

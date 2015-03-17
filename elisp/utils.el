@@ -73,14 +73,14 @@
 (use-package dired+ :ensure t)
 (use-package dired-details
   :ensure t
-  :init (dired-details-install))
+  :config (dired-details-install))
 (use-package dired-details+ :ensure t)
 
 ;; edit-server
 (use-package edit-server
   :ensure t
   :if (and (window-system) (daemonp))
-  :init (edit-server-start))
+  :config (edit-server-start))
 
 ;; expand-region
 (use-package expand-region
@@ -150,7 +150,7 @@
 
 ;; font-lock
 (use-package font-lock
-  :init (global-font-lock-mode 1))
+  :config (global-font-lock-mode 1))
 
 ;; geiser
 (use-package geiser :ensure t)
@@ -159,7 +159,7 @@
 (use-package diff-hl
   :ensure t
   :defer t
-  :init (diff-hl-mode))
+  :config (diff-hl-mode))
 
 ;; haskell
 (load "haskell-init")
@@ -170,17 +170,16 @@
 
 ;; ido
 (use-package ido
-  :init (progn
-          (ido-mode 1)
-          (ido-everywhere 1))
   :config
+  (ido-mode 1)
+  (ido-everywhere 1)
   (setq ido-enable-flex-matching t)
   (setq ido-save-directory-list-file "~/.emacs.cache/ido.last")
   (setq ido-use-filename-at-point 'guess))
 
 (use-package ido-ubiquitous
   :ensure t
-  :init (ido-ubiquitous-mode 1))
+  :config (ido-ubiquitous-mode 1))
 
 ;; ispell
 (use-package ispell
@@ -212,7 +211,7 @@
 ;; flycheck
 (use-package flycheck
   :ensure t
-  :init (global-flycheck-mode))
+  :config (global-flycheck-mode))
 
 ;; flycheck-haskell
 (use-package flycheck-haskell
@@ -223,13 +222,14 @@
 ;; flycheck-color-mode
 (use-package flycheck-color-mode-line
   :ensure t
-  :init (flycheck-color-mode-line-mode))
+  :config (flycheck-color-mode-line-mode))
 
 ;; guru-mode
 (use-package guru-mode
   :ensure t
-  :init (guru-global-mode)
-  :config (setq guru-warn-only t))
+  :config
+  (guru-global-mode)
+  (setq guru-warn-only t))
 
 ;; idris-mode
 (use-package idris-mode
@@ -272,13 +272,14 @@
 ;; pretty-mode
 (use-package pretty-mode
   :ensure t
-  :init (global-pretty-mode))
+  :config (global-pretty-mode))
 
 ;; projectile
 (use-package projectile
   :ensure t
-  :init (projectile-global-mode)
-  :config (setq projectile-enable-caching t))
+  :config
+  (projectile-global-mode)
+  (setq projectile-enable-caching t))
 
 ;; quack
 (use-package quack :ensure t)
@@ -306,8 +307,8 @@
 ;; undo-tree
 (use-package undo-tree
   :ensure t
-  :init (global-undo-tree-mode t)
   :config
+  (global-undo-tree-mode t)
   (setq undo-tree-visualizer-relative-timestamps t)
   (setq undo-tree-visualizer-timestamps t)
   (setq undo-tree-auto-save-history t)
@@ -316,8 +317,8 @@
 ;; whitespace
 (use-package whitespace
   :ensure t
-  :init (global-whitespace-mode t)
   :config
+  (global-whitespace-mode t)
   (setq whitespace-line-column 80)
   (setq whitespace-style '(face tabs empty trailing lines-tail space-before-tab))
   (add-hook 'before-save-hook 'whitespace-cleanup))
@@ -394,17 +395,18 @@
 
 ;; show-paren-mode
 (use-package paren
-  :init (show-paren-mode t)
-  :config (setq show-paren-style 'expression))
+  :config
+  (show-paren-mode t)
+  (setq show-paren-style 'expression))
 
 ;; smart-mode-line
 (use-package smart-mode-line
   :ensure t
-  :init (progn
-          (use-package smart-mode-line-powerline-theme :ensure t)
-	  (setq sml/no-confirm-load-theme t)
-          (setq sml/theme 'powerline)
-	  (sml/setup)))
+  :config
+  (use-package smart-mode-line-powerline-theme :ensure t)
+  (setq sml/no-confirm-load-theme t)
+  (setq sml/theme 'powerline)
+  (sml/setup))
 
 ;; smartparens
 (load "sp-init")
@@ -412,8 +414,9 @@
 ;; smex
 (use-package smex
   :ensure t
-  :init (smex-initialize)
-  :config (setq smex-save-file "~/.emacs.cache/smex-items")
+  :config
+  (smex-initialize)
+  (setq smex-save-file "~/.emacs.cache/smex-items")
   :bind (("M-x" . smex)
 	 ("M-X" . smex-major-mode-commands)
 	 ("C-c C-c M-x" . execute-extended-command)))
@@ -437,9 +440,9 @@
 ;; yasnippet
 (use-package yasnippet
   :ensure t
-  :init (progn
-	  (setq yas-snippet-dirs "~/.emacs.d/yasnippet-snippets")
-	  (yas-global-mode t)))
+  :config
+  (setq yas-snippet-dirs "~/.emacs.d/yasnippet-snippets")
+  (yas-global-mode t))
 
 (provide 'utils)
 ;;; utils.el ends here

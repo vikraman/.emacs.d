@@ -7,11 +7,11 @@
 
 (use-package smartparens
   :ensure t
-  :init (progn
-          (require 'smartparens-config)
-          (smartparens-global-mode t)
-          (show-smartparens-global-mode t))
   :config
+  (require 'smartparens-config)
+  (smartparens-global-mode t)
+  (show-smartparens-global-mode t)
+
   ;; keybindings
 
   (define-key sp-keymap (kbd "C-M-f") 'sp-forward-sexp)
