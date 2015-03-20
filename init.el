@@ -17,6 +17,7 @@
 
 (eval-when-compile
   (require 'use-package))
+(require 'bind-key)
 (setq inhibit-default-init t)
 
 ;; Emacs customizations

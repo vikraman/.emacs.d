@@ -168,6 +168,57 @@
 ;; (autoload 'highlight-indentation-mode "highlight-indentation" nil t)
 ;; (autoload 'highlight-indentation-current-column-mode "highlight-indentation" nil t)
 
+;; helm
+(use-package helm
+  :ensure t
+  :bind
+  (("C-x b" . helm-mini)
+   ("C-x C-b" . helm-buffers-list)
+   ("C-x C-f" . helm-find-files))
+  :config
+  (use-package helm-config)
+  (use-package helm-command
+    :bind (("M-x" . helm-M-x))
+    :config (setq helm-M-x-fuzzy-match t
+                  helm-M-x-requires-pattern 2))
+  (helm-mode 1)
+  (helm-autoresize-mode t)
+  (helm-adaptive-mode t)
+  (setq helm-buffers-fuzzy-matching t
+        helm-recentf-fuzzy-match t
+        helm-split-window-in-side-p t
+        helm-move-to-line-cycle-in-source t
+        helm-ff-search-library-in-sexp t
+        helm-ff-file-name-history-use-recentf t
+        helm-quick-update t)
+  (bind-keys :map helm-map
+             ("<tab>" . helm-execute-persistent-action)
+             ("C-i" . helm-execute-persistent-action)
+             ("C-z" . helm-select-action))
+  (use-package helm-ring
+    :bind (("M-y" . helm-show-kill-ring)))
+  (use-package helm-projectile
+    :ensure t :defer t)
+  (use-package helm-swoop
+    :ensure t :defer t
+    :bind
+    (("M-i" . helm-swoop)
+     ("M-I" . helm-swoo-back-to-last-point)
+     ("C-c M-i" . helm-multi-swoop)
+     ("C-x M-i" . helm-multi-swoop-all))
+    :config
+    (bind-keys :map isearch-mode-map
+               ("M-i" . helm-swoop-from-isearch))
+    (bind-keys :map helm-swoop-map
+               ("M-i" . helm-multi-swoop-all-from-helm-swoop)
+               ("C-r" . helm-previous-line)
+               ("C-s" . helm-next-line))
+    (bind-keys :map helm-multi-swoop-map
+               ("C-r" . helm-previous-line)
+               ("C-s" . helm-next-line))
+    )
+  (use-package helm-ag :ensure t :defer t))
+
 ;; ido
 (use-package ido
   :config
@@ -279,7 +330,10 @@
   :ensure t
   :config
   (projectile-global-mode)
-  (setq projectile-enable-caching t))
+  (setq projectile-completion-system 'helm
+        projectile-enable-caching t
+        projectile-switch-project-action 'helm-projectile)
+  (helm-projectile-on))
 
 ;; quack
 (use-package quack :ensure t)
