@@ -219,19 +219,6 @@
     )
   (use-package helm-ag :ensure t :defer t))
 
-;; ido
-(use-package ido
-  :config
-  (ido-mode 1)
-  (ido-everywhere 1)
-  (setq ido-enable-flex-matching t)
-  (setq ido-save-directory-list-file "~/.emacs.cache/ido.last")
-  (setq ido-use-filename-at-point 'guess))
-
-(use-package ido-ubiquitous
-  :ensure t
-  :config (ido-ubiquitous-mode 1))
-
 ;; ispell
 (use-package ispell
   :if (executable-find "aspell")
@@ -464,16 +451,6 @@
 
 ;; smartparens
 (load "sp-init")
-
-;; smex
-(use-package smex
-  :ensure t
-  :config
-  (smex-initialize)
-  (setq smex-save-file "~/.emacs.cache/smex-items")
-  :bind (("M-x" . smex)
-	 ("M-X" . smex-major-mode-commands)
-	 ("C-c C-c M-x" . execute-extended-command)))
 
 ;; enh-ruby-mode
 (use-package enh-ruby-mode
