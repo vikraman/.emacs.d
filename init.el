@@ -160,17 +160,10 @@
   :config (exec-path-from-shell-initialize))
 
 ;; Theme
-(use-package color-theme
-  :ensure t)
-(use-package color-theme-solarized
-  :load-path "themes/emacs-color-theme-solarized"
-  :init (setq frame-background-mode 'dark)
+(use-package solarized-theme
+  :ensure t
   :config
-  (load-theme 'solarized 'no-confirm)
-  (custom-set-faces
-   '(show-paren-match
-     ((t (:foreground nil ,@fmt-bold ,@bg-base02))))
-   ))
+  (load-theme 'solarized-dark t))
 
 ;; Use the Source Code Pro font
 (setq default-frame-alist '((font . "Source Code Pro SemiBold-10")))
