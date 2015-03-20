@@ -15,7 +15,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
 (setq inhibit-default-init t)
 
 ;; Emacs customizations
