@@ -48,9 +48,6 @@
                 slime-company
                 ))
 
-;; TeX
-(load "tex-init")
-
 ;; ag -- the silver searcher
 (use-package ag
   :ensure t
@@ -160,9 +157,6 @@
   :ensure t
   :defer t
   :config (diff-hl-mode))
-
-;; haskell
-(load "haskell-init")
 
 ;; highlight-indent
 ;; (autoload 'highlight-indentation-mode "highlight-indentation" nil t)
@@ -448,9 +442,6 @@
   (setq sml/no-confirm-load-theme t)
   (setq sml/theme 'powerline)
   (sml/setup))
-
-;; smartparens
-(load "sp-init")
 
 ;; enh-ruby-mode
 (use-package enh-ruby-mode
