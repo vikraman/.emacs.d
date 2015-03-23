@@ -294,6 +294,11 @@
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C-<" . mc/mark-all-like-this)))
 
+;; nyan-mode
+(use-package nyan-mode
+  :ensure t
+  :config (nyan-mode))
+
 ;; paradox
 (use-package paradox
   :ensure t
