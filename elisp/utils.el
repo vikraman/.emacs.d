@@ -438,9 +438,8 @@
 (use-package smart-mode-line
   :ensure t
   :config
-  (use-package smart-mode-line-powerline-theme :ensure t)
   (setq sml/no-confirm-load-theme t)
-  (setq sml/theme 'powerline)
+  (setq sml/theme 'respectful)
   (sml/setup))
 
 ;; enh-ruby-mode
