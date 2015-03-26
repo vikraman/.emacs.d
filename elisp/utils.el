@@ -168,7 +168,8 @@
   :bind
   (("C-x b" . helm-mini)
    ("C-x C-b" . helm-buffers-list)
-   ("C-x C-f" . helm-find-files))
+   ("C-x C-f" . helm-find-files)
+   ("C-x C-d" . helm-browse-project))
   :config
   (use-package helm-config)
   (use-package helm-command
@@ -211,7 +212,8 @@
                ("C-r" . helm-previous-line)
                ("C-s" . helm-next-line))
     )
-  (use-package helm-ag :ensure t :defer t))
+  (use-package helm-ag :ensure t :defer t)
+  (use-package helm-ls-git :ensure t :defer t))
 
 ;; ispell
 (use-package ispell
