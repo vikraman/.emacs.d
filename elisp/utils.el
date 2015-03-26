@@ -317,6 +317,7 @@
   :config
   (projectile-global-mode)
   (setq projectile-completion-system 'helm
+        projectile-indexing-method 'native
         projectile-enable-caching t
         projectile-switch-project-action 'helm-projectile)
   (helm-projectile-on))
