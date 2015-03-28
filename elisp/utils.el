@@ -473,6 +473,11 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2))
 
+;; writegood-mode
+(use-package writegood-mode
+  :ensure t
+  :defer t)
+
 ;; yasnippet
 (use-package yasnippet
   :ensure t
