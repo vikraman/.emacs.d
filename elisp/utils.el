@@ -229,6 +229,13 @@
   (add-hook 'message-mode-hook 'flyspell-mode)
   (add-hook 'magit-log-edit-mode-hook 'flyspell-prog-mode))
 
+;; golden-ratio
+(use-package golden-ratio
+  :ensure t
+  :config
+  (setq golden-ratio-auto-scale t)
+  (golden-ratio-mode 1))
+
 ;; langtool
 (use-package langtool
   :ensure t
