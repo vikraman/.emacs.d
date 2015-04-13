@@ -68,6 +68,9 @@
   (sp-pair "'" nil :actions :rem)
   (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil)
 
+  ;; haskell-mode
+  (sp-local-pair 'haskell-mode "{-#" "#-}")
+
   ;; markdown-mode
   (sp-with-modes '(markdown-mode gfm-mode rst-mode)
     (sp-local-pair "*" "*" :bind "C-*")
