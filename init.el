@@ -168,6 +168,10 @@
 ;; Use the Source Code Pro font
 (setq default-frame-alist '((font . "Source Code Pro SemiBold-10")))
 
+;; Use different custom file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 ;; Custom packages
 
 (use-package dart-init :defer t :load-path "elisp/")
