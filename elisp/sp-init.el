@@ -64,12 +64,12 @@
   (define-key sp-keymap (kbd "H-s s") 'sp-split-sexp)
 
   ;; pair management
-
   (sp-pair "'" nil :actions :rem)
   (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil)
 
-  ;; haskell-mode
-  (sp-local-pair 'haskell-mode "{-#" "#-}")
+  ;; haskell and agda pragmas
+  (sp-with-modes '(haskell-mode agda2-mode)
+    (sp-local-pair "{-#" "#-}"))
 
   ;; markdown-mode
   (sp-with-modes '(markdown-mode gfm-mode rst-mode)
