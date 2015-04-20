@@ -278,7 +278,9 @@
 
 ;; magit
 (use-package magit
-  :ensure t)
+  :ensure t
+  :config
+  (setq magit-last-seen-setup-instructions "1.4.0"))
 
 (use-package magit-filenotify
   :ensure t
