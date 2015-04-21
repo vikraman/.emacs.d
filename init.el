@@ -162,8 +162,14 @@
 ;; Theme
 (use-package solarized-theme
   :ensure t
+  :if (display-graphic-p)
   :config
   (load-theme 'solarized-dark t))
+
+(use-package zenburn-theme
+  :ensure t
+  :if (not (display-graphic-p))
+  :config (load-theme 'zenburn t))
 
 ;; Use the Source Code Pro font
 (setq default-frame-alist '((font . "Source Code Pro SemiBold-10")))
