@@ -21,7 +21,8 @@
   :config
   (setq company-idle-delay 0.2)
   (setq company-minimum-prefix-length 2)
-  (add-hook 'after-init-hook 'global-company-mode))
+  (add-hook 'after-init-hook 'global-company-mode)
+  (add-to-list 'company-backends 'company-ghc))
 
 (defun use-packages (names)
   "Use-package on list of NAMES."
@@ -252,13 +253,9 @@
 ;; flycheck
 (use-package flycheck
   :ensure t
-  :config (global-flycheck-mode))
-
-;; flycheck-haskell
-(use-package flycheck-haskell
-  :ensure t
   :config
-  (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
+  (global-flycheck-mode)
+  (setq flycheck-display-errors-function #'flycheck-display-error-messages-unless-error-list))
 
 ;; flycheck-color-mode
 (use-package flycheck-color-mode-line
