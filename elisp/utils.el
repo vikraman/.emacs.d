@@ -373,6 +373,15 @@
 
 ;; scala
 (use-package scala-mode2 :ensure t)
+
+(use-package scala-outline-popup
+  :ensure t
+  :bind ("C-c o" . scala-outline-popup)
+  :config
+  (setq scala-outline-popup-select 'closest)
+  (define-key popup-isearch-keymap (kbd "C-c o") 'popup-isearch-cancel)
+  )
+
 (use-package sbt-mode :ensure t)
 
 (defun scalariver ()
