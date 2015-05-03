@@ -179,7 +179,10 @@
   :config (load-theme 'zenburn t))
 
 ;; Use the Source Code Pro font
-(setq default-frame-alist '((font . "Source Code Pro SemiBold-10")))
+;; On felicia, use size 8, else 10
+(if (string-equal (system-name) "felicia")
+    (setq default-frame-alist '((font . "Source Code Pro SemiBold-8")))
+  (setq default-frame-alist '((font . "Source Code Pro SemiBold-10"))))
 
 ;; Use different custom file
 (setq custom-file "~/.emacs.d/custom.el")
