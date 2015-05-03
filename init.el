@@ -159,6 +159,13 @@
   :ensure t
   :config (exec-path-from-shell-initialize))
 
+;; keychain
+(use-package keychain-environment
+  :ensure t
+  :config
+  (keychain-refresh-environment)
+)
+
 ;; Theme
 (use-package solarized-theme
   :ensure t
