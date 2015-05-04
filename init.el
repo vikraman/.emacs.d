@@ -80,7 +80,7 @@
 (setq write-region-inhibit-fsync t)
 
 ;; Browser
-(setq browse-url-browser-function 'browse-url-xdg-open)
+(setq browse-url-browser-function 'browse-url-firefox)
 
 ;; Buffer switching
 (defun switch-to-previous-buffer ()
