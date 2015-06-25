@@ -127,10 +127,15 @@
   "Run an inferior Coq process in a new frame." t)
 
 ;; proofgeneral
-(custom-set-faces
+(use-package proof-site
+  :config
+  (add-hook 'coq-mode-hook #'company-coq-intialize)
+  (setq company-coq-dynamic-autocompletion t)
+  (custom-set-faces
    '(proof-locked-face
      ((t (:background "gray11")))
-   ))
+     ))
+  )
 
 ;; vc-darcs
 (use-package vc-darcs
