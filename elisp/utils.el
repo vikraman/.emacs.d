@@ -240,6 +240,8 @@
   :ensure t
   :config
   (setq golden-ratio-auto-scale t)
+  (setq golden-ratio-exclude-modes
+        '("compilation-mode" "coq-goals-mode" "coq-response" "mu4e-view-mode"))
   (golden-ratio-mode 1))
 
 ;; langtool
