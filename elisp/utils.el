@@ -492,6 +492,10 @@
   :ensure t
   :defer t)
 
+;; yaml-mode
+(use-package yaml-mode
+  :ensure t)
+
 ;; yasnippet
 (use-package yasnippet
   :ensure t
