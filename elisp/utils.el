@@ -487,6 +487,11 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2))
 
+;; systemd
+(use-package systemd
+  :ensure t
+  :defer t)
+
 ;; writegood-mode
 (use-package writegood-mode
   :ensure t
