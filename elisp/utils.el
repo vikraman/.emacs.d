@@ -492,6 +492,11 @@
   :ensure t
   :defer t)
 
+;; docker
+(use-package dockerfile-mode
+  :ensure t
+  :defer t)
+
 ;; writegood-mode
 (use-package writegood-mode
   :ensure t
