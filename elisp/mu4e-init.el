@@ -21,6 +21,8 @@
 ;; my email config
 (setq mu4e-user-mail-address-list
       '("vikraman.choudhury@gmail.com"
+        "vikraman@indiana.edu"
+        "vikraman@umail.iu.edu"
         "vikraman@gentoo.org"
         "vikraman@iitk.ac.in"
         "vikraman@cse.iitk.ac.in"
@@ -33,6 +35,10 @@
 (defvar my-mu4e-account-alist
   '(("gmail"
      (user-mail-address "vikraman.choudhury@gmail.com"))
+    ("indiana"
+     (user-mail-address "vikraman@indiana.edu"))
+    ("umail"
+     (user-mail-address "vikraman@umail.iu.edu"))
     ("vikraman"
      (user-mail-address "vikraman@vikraman.org"))
     ("git"
