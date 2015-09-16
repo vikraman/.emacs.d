@@ -155,9 +155,6 @@
 (use-package font-lock
   :config (global-font-lock-mode 1))
 
-;; geiser
-(use-package geiser :ensure t)
-
 ;; diff-hl-mode
 (use-package diff-hl
   :ensure t
