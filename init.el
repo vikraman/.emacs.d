@@ -79,6 +79,9 @@
 ;; Do not fsync on save since I'm on an ssd
 (setq write-region-inhibit-fsync t)
 
+;; Make tab more powerful
+(setq tab-always-indent 'complete)
+
 ;; Browser
 (setq browse-url-browser-function 'browse-url-firefox)
 
