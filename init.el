@@ -190,11 +190,11 @@
 
 ;; Custom packages
 
-(use-package dart-init :defer t :load-path "elisp/")
+(use-package dart-init :load-path "elisp/")
 (use-package haskell-init :load-path "elisp/")
 (use-package mu4e-init :load-path "elisp/")
 (use-package sp-init :load-path "elisp/")
-(use-package tex-init :defer t :load-path "elisp/")
+(use-package tex-init :load-path "elisp/")
 (use-package utils :load-path "elisp/")
 
 (provide 'init)
