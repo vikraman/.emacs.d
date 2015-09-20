@@ -14,11 +14,7 @@
     :config
     (use-package sp-init
       :config
-      (smartparens-strict-mode +1)
-      (add-to-list 'sp--special-self-insert-commands 'quack-insert-opening-paren)
-      (add-to-list 'sp--special-self-insert-commands 'quack-insert-closing-paren)
-      (add-to-list 'sp--special-self-insert-commands 'quack-insert-opening-bracket)
-      (add-to-list 'sp--special-self-insert-commands 'quack-insert-closing-bracket)))
+      (smartparens-strict-mode +1)))
   (setq geiser-mode-start-repl-p t
         geiser-repl-history-filename "~/.emacs.cache/geiser-history"))
 
