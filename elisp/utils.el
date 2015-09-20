@@ -507,7 +507,6 @@
 (use-package yasnippet
   :ensure t
   :config
-  (setq yas-snippet-dirs "~/.emacs.d/yasnippet-snippets")
   (yas-global-mode t))
 
 (provide 'utils)
