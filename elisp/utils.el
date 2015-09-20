@@ -21,6 +21,7 @@
   :config
   (setq company-idle-delay 0.2)
   (setq company-minimum-prefix-length 2)
+  (setq company-dabbrev-downcase nil)
   (add-hook 'after-init-hook 'global-company-mode)
   (add-to-list 'company-backends 'company-ghc))
 
