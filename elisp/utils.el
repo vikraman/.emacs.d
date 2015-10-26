@@ -130,7 +130,7 @@
 ;; proofgeneral
 (use-package proof-site
   :config
-  (add-hook 'coq-mode-hook #'company-coq-intialize)
+  (add-hook 'coq-mode-hook #'company-coq-initialize)
   (setq company-coq-dynamic-autocompletion t)
   (custom-set-faces
    '(proof-locked-face
