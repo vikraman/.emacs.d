@@ -10,11 +10,10 @@
   :ensure t
   :config
   (use-package quack
-    :ensure t
+    :ensure t)
+  (use-package sp-init
     :config
-    (use-package sp-init
-      :config
-      (smartparens-strict-mode +1)))
+    (smartparens-strict-mode +1))
   (setq geiser-mode-start-repl-p t
         geiser-repl-history-filename "~/.emacs.cache/geiser-history"))
 
