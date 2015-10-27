@@ -88,6 +88,11 @@
   (sp-local-tag '(sgml-mode html-mode) "<" "<_>" "</_>"
                 :transform 'sp-match-sgml-tags)
 
+  ;; racket-mode
+  (sp-with-modes '(racket-mode)
+    (sp-local-pair "#|" "|#")
+    (sp-local-pair "`" nil :actions nil))
+
   ;; lisp modes
   (sp-with-modes sp--lisp-modes
     (sp-local-pair "(" nil :bind "C-(")))
