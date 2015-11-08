@@ -181,6 +181,18 @@
   :if (not (display-graphic-p))
   :config (load-theme 'zenburn t))
 
+(defun toggle-solarized-theme ()
+  "Toggle solarized light and dark themes."
+  (interactive)
+  (if (custom-theme-enabled-p 'solarized-dark)
+      (progn
+        (disable-theme 'solarized-dark)
+        (load-theme 'solarized-light t))
+    (if (custom-theme-enabled-p 'solarized-light)
+        (progn
+          (disable-theme 'solarized-light)
+          (load-theme 'solarized-dark t)))))
+
 ;; Use the Source Code Pro font
 ;; On felicia, use size 8, else 10
 (if (string-equal (system-name) "felicia")
