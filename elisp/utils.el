@@ -216,6 +216,13 @@
                ("C-r" . helm-previous-line)
                ("C-s" . helm-next-line))
     )
+  (use-package helm-make
+    :ensure t :defer t
+    :bind
+    (("C-c m m" . helm-make-projectile)
+     ("C-c m c" . helm-make))
+    :config
+    (setq helm-make-do-save t))
   (use-package helm-ag :ensure t :defer t)
   (use-package helm-ls-git :ensure t :defer t))
 
