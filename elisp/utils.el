@@ -246,8 +246,7 @@
   :config
   (setq golden-ratio-auto-scale t)
   (setq golden-ratio-exclude-modes
-        '("compilation-mode" "coq-goals-mode" "coq-response" "mu4e-view-mode" "AgdaInfo"))
-  (golden-ratio-mode 1))
+        '("compilation-mode" "coq-goals-mode" "coq-response" "mu4e-view-mode" "AgdaInfo")))
 
 ;; langtool
 (use-package langtool
