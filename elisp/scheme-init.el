@@ -30,6 +30,7 @@
   (add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
   (put 'union-case 'racket-indent-function 2)
   (put 'fresh 'racket-indent-function 1)
+  (put 'do 'racket-indent-function 0)
   (put 'conde 'racket-indent-function 0)
   (put 'syntax-id-rules 'racket-indent-function 1))
 
