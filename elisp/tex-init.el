@@ -17,6 +17,7 @@
   (setq-default TeX-master nil)
   (add-hook 'LaTeX-mode-hook
             (lambda ()
+              (set-fill-column 120)
               (auto-fill-mode)
               (flyspell-mode)
               (LaTeX-math-mode)
