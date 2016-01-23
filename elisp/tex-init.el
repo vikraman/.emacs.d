@@ -23,7 +23,8 @@
               (LaTeX-math-mode)
               (turn-on-reftex)
               (setq reftex-plug-into-AUCTeX t)
-              (setq TeX-PDF-mode t)))
+              (setq TeX-PDF-mode t
+                    TeX-engine 'xetex)))
   (add-to-list 'TeX-command-list
                '("Nomenclature" "makeindex %s.nlo -s nomencl.ist -o %s.nls"
                  (lambda (name command file)
