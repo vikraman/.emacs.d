@@ -172,14 +172,13 @@
 ;; Theme
 (use-package solarized-theme
   :ensure t
-  :if (display-graphic-p)
   :config
-  (load-theme 'solarized-dark t))
-
-(use-package zenburn-theme
-  :ensure t
-  :if (not (display-graphic-p))
-  :config (load-theme 'zenburn t))
+  (load-theme 'solarized-dark t)
+  ;; workaround broken colors in 256color terminal
+  (add-hook 'after-make-frame-functions
+            (lambda (frame)
+              (unless (display-graphic-p frame)
+                (set-face-background 'default "unspecified-bg" frame)))))
 
 (defun toggle-solarized-theme ()
   "Toggle solarized light and dark themes."
