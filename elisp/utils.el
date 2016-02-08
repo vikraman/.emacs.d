@@ -381,8 +381,13 @@
   :config
   (global-whitespace-mode t)
   (setq whitespace-line-column 120)
-  (setq whitespace-style '(face tabs empty trailing lines-tail space-before-tab))
-  (add-hook 'before-save-hook 'whitespace-cleanup))
+  (setq whitespace-style '(face tabs empty trailing lines-tail space-before-tab)))
+
+;; whitespace-cleanup
+(use-package whitespace-cleanup-mode
+  :ensure t
+  :config
+  (global-whitespace-cleanup-mode t))
 
 ;; scala
 (use-package scala-mode2 :ensure t)
