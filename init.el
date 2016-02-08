@@ -26,15 +26,15 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Remove annoying defaults
-(setq inhibit-splash-screen t)
-(setq inhibit-startup-echo-area-message t)
 
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-(setq inhibit-startup-message t)
-(setq inhibit-startup-echo-area-message t)
+(setq inhibit-splash-screen t
+      inhibit-startup-message t
+      initial-buffer-choice t
+      inhibit-startup-echo-area-message t)
 
 (set-default 'tags-case-fold-search nil)
 
@@ -166,8 +166,7 @@
 (use-package keychain-environment
   :ensure t
   :config
-  (keychain-refresh-environment)
-)
+  (keychain-refresh-environment))
 
 ;; Theme
 (use-package solarized-theme
