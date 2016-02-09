@@ -362,7 +362,7 @@
   :ensure t
   :config
   (setq scss-sass-options
-	'("--style" "compressed" "--cache-location" "'/tmp/.sass-cache'")))
+        '("--style" "compressed" "--cache-location" "'/tmp/.sass-cache'")))
 
 
 ;; undo-tree
@@ -381,13 +381,16 @@
   :config
   (global-whitespace-mode t)
   (setq whitespace-line-column 120)
-  (setq whitespace-style '(face tabs empty trailing lines-tail space-before-tab)))
+  (setq whitespace-style '(face tabs empty trailing lines-tail space-before-tab))
+  (add-hook 'before-save-hook
+            (lambda () (unless (bound-and-true-p whitespace-cleanup-mode)
+                    (whitespace-cleanup)))))
 
 ;; whitespace-cleanup
 (use-package whitespace-cleanup-mode
   :ensure t
   :config
-  (global-whitespace-cleanup-mode t))
+  (add-hook 'prog-mode-hook 'whitespace-cleanup-mode))
 
 ;; scala
 (use-package scala-mode2 :ensure t)
