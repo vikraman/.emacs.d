@@ -67,10 +67,6 @@
   (sp-pair "'" nil :actions :rem)
   (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil)
 
-  ;; haskell and agda pragmas
-  (sp-with-modes '(haskell-mode agda2-mode)
-    (sp-local-pair "{-#" "#-}"))
-
   ;; markdown-mode
   (sp-with-modes '(markdown-mode gfm-mode rst-mode)
     (sp-local-pair "*" "*" :bind "C-*")
