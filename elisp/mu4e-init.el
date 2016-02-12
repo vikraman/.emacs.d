@@ -121,5 +121,14 @@
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
 
+;; alerts
+(use-package mu4e-alert
+  :ensure t
+  :config
+  (setq mu4e-alert-interesting-mail-query
+        "flag:unread AND NOT flag:list")
+  (mu4e-alert-set-default-style 'libnotify)
+  (mu4e-alert-enable-notifications))
+
 (provide 'mu4e-init)
 ;;; mu4e-init.el ends here
