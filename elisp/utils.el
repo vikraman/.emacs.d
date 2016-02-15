@@ -86,38 +86,6 @@
   :ensure t
   :bind ("C-=" . er/expand-region))
 
-;; agda2-mode
-(use-package agda2
-  :config
-  (add-hook 'agda2-mode-hook
-            '(lambda ()
-               (setq agda2-include-dirs '("." "/usr/share/agda-stdlib"))))
-  (setq agda2-highlight-set-faces nil)
-  (defface agda2-highlight-primitive-type-face
-    '((t (:foreground "dark cyan")))
-    "The face used for primitive types (like Set and Prop)."
-    )
-  (defface agda2-highlight-datatype-face
-    '((t (:foreground "dark cyan")))
-    "The face used for datatypes."
-    )
-  (defface agda2-highlight-function-face
-    '((t (:foreground "dark cyan")))
-    "The face used for functions."
-    )
-  (defface agda2-highlight-postulate-face
-    '((t (:foreground "dark cyan")))
-    "The face used for postulates."
-    )
-  (defface agda2-highlight-primitive-face
-    '((t (:foreground "dark cyan")))
-    "The face used for primitive functions."
-    )
-  (defface agda2-highlight-record-face
-    '((t (:foreground "dark cyan")))
-    "The face used for record types."
-    ))
-
 ;; coq
 (setq auto-mode-alist (cons '("\\.v$" . coq-mode) auto-mode-alist))
 (autoload 'coq-mode "coq" "Major mode for editing Coq vernacular." t)

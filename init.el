@@ -205,6 +205,7 @@
 
 (use-package dart-init :load-path "elisp/")
 (use-package haskell-init :load-path "elisp/")
+(use-package agda-init :load-path "elisp/")
 (use-package mu4e-init :load-path "elisp/")
 (use-package scheme-init :load-path "elisp/")
 (use-package sp-init :load-path "elisp/")
