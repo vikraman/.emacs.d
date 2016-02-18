@@ -211,6 +211,7 @@
 (use-package sp-init :load-path "elisp/")
 (use-package tex-init :load-path "elisp/")
 (use-package utils :load-path "elisp/")
+(use-package poly-init :load-path "elisp/")
 
 (provide 'init)
 ;;; init.el ends here

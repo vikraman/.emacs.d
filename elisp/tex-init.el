@@ -34,15 +34,16 @@
   :bind (("C-<tab>" . TeX-complete-symbol)
          ("C-c C-t x" . TeX-toggle-escape)))
 
-(defun TeX-toggle-escape nil (interactive)
-       "Toggle Shell Escape"
-       (setq LaTeX-command
-             (if (string= LaTeX-command "latex") "latex -shell-escape"
-               "latex"))
-       (message (concat "shell escape "
-                        (if (string= LaTeX-command "latex -shell-escape")
-                            "enabled"
-                          "disabled"))))
+(defun TeX-toggle-escape nil
+  "Toggle Shell Escape."
+  (interactive)
+  (setq LaTeX-command
+        (if (string= LaTeX-command "latex") "latex -shell-escape"
+          "latex"))
+  (message (concat "shell escape "
+                   (if (string= LaTeX-command "latex -shell-escape")
+                       "enabled"
+                     "disabled"))))
 
 (provide 'tex-init)
 ;;; tex-init.el ends here
