@@ -7,14 +7,14 @@
 
 ;; agda2-mode
 (use-package agda2
+  :bind (("M-p" . agda2-previous-goal)
+         ("M-n" . agda2-next-goal))
   :config
   (add-hook 'agda2-mode-hook
             '(lambda ()
                (setq agda2-highlight-level 'interactive
                      agda2-highlight-face-groups 'default-faces
-                     agda2-include-dirs '("."
-                                          "/usr/share/agda-stdlib"
-                                          "categories"))))
+                     agda2-program-args '("--sharing"))))
   (let ((base03    "#002b36")
         (base02    "#073642")
         (base01    "#586e75")
