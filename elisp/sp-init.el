@@ -63,10 +63,6 @@
   (define-key sp-keymap (kbd "H-s j") 'sp-join-sexp)
   (define-key sp-keymap (kbd "H-s s") 'sp-split-sexp)
 
-  ;; pair management
-  (sp-pair "'" nil :actions :rem)
-  (sp-local-pair 'minibuffer-inactive-mode "'" nil :actions nil)
-
   ;; markdown-mode
   (sp-with-modes '(markdown-mode gfm-mode rst-mode)
     (sp-local-pair "*" "*" :bind "C-*")
