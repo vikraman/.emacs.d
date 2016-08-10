@@ -80,6 +80,11 @@
   (sp-local-tag '(sgml-mode html-mode) "<" "<_>" "</_>"
                 :transform 'sp-match-sgml-tags)
 
+  ;; haskell-mode
+  (sp-with-modes '(haskell-mode literate-haskell-mode)
+    (sp-local-pair "{-" "-}")
+    (sp-local-pair "{-@" "@-}"))
+
   ;; racket-mode
   (sp-with-modes '(racket-mode)
     (sp-local-pair "#|" "|#")
