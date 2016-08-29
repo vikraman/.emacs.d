@@ -10,6 +10,26 @@
   :bind (("M-p" . agda2-previous-goal)
          ("M-n" . agda2-next-goal))
   :config
+  ;; missing letters
+  ;; https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols#Latin_letters
+  (setq-default agda-input-user-translations
+                `(("Mih" . ("ℎ"))
+                  ("McB" . ("𝓑"))
+                  ("McE" . ("𝓔"))
+                  ("McF" . ("𝓕"))
+                  ("McH" . ("𝓗"))
+                  ("McI" . ("𝓘"))
+                  ("McL" . ("𝓛"))
+                  ("McM" . ("𝓜"))
+                  ("McR" . ("𝓡"))
+                  ("Mce" . ("𝓮"))
+                  ("Mcg" . ("𝓰"))
+                  ("Mco" . ("𝓸"))
+                  ("MfC" . ("ℭ"))
+                  ("MfH" . ("ℌ"))
+                  ("MfI" . ("ℑ"))
+                  ("MfR" . ("ℜ"))
+                  ("MfZ" . ("ℨ"))))
   (add-hook 'agda2-mode-hook
             '(lambda ()
                (setq agda2-highlight-level 'interactive
