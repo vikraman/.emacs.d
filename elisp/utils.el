@@ -415,6 +415,7 @@
              ))
 
 (use-package ensime
+  :pin melpa-stable
   :ensure t
   :defer t
   :config
