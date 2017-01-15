@@ -23,6 +23,7 @@
   (setq company-minimum-prefix-length 2)
   (setq company-dabbrev-downcase nil)
   (add-hook 'after-init-hook 'global-company-mode)
+  (add-to-list 'company-backends 'company-anaconda)
   (add-to-list 'company-backends 'company-ghc))
 
 (defun use-packages (names)
@@ -47,6 +48,7 @@
                 company-coq
                 company-restclient
                 company-quickhelp
+                company-anaconda
                 slime-company
                 ))
 
@@ -309,6 +311,13 @@
         projectile-enable-caching t
         projectile-switch-project-action 'helm-projectile)
   (helm-projectile-on))
+
+;; python
+(use-package anaconda-mode
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
 
 ;; quack
 (use-package quack :ensure t)
