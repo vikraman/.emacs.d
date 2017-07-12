@@ -67,9 +67,12 @@
 (set-selection-coding-system 'utf-8)
 
 ;; unicode fonts
-(use-package unicode-fonts
-  :ensure t
-  :config (unicode-fonts-setup))
+;; (use-package persistent-soft
+;;   :ensure t
+;;   :config
+;;   (use-package unicode-fonts
+;;     :ensure t
+;;     :config (unicode-fonts-setup)))
 
 ;; Ending newline
 (setq require-final-newline t)
@@ -196,7 +199,17 @@
 ;; On felicia, use size 8, else 10
 (if (string-equal (system-name) "felicia")
     (add-to-list 'default-frame-alist '(font . "Source Code Pro SemiBold-8"))
-  (add-to-list 'default-frame-alist '(font . "Source Code Pro SemiBold-10")))
+  (add-to-list 'default-frame-alist '(font . "Pragmata Pro-10")))
+
+;; Quick font switching for current frame
+;; (defun use-face-pragmata-pro ()
+;;   "Use Pragmata Pro font."
+;;   (interactive)
+;;   (set-frame-font "Pragmata Pro-10"))
+;; (defun use-face-source-code-pro ()
+;;   "Use Source Code Pro font."
+;;   (interactive)
+;;   (set-frame-font "Source Code Pro SemiBold-8"))
 
 ;; Use different custom file
 (setq custom-file "~/.emacs.d/custom.el")

@@ -319,6 +319,12 @@
   (add-hook 'python-mode-hook 'anaconda-mode)
   (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
 
+(use-package py-yapf
+  :ensure t
+  :config
+  (setq py-yapf-options '("--style=facebook"))
+  (add-hook 'python-mode-hook 'py-yapf-enable-on-save))
+
 ;; quack
 (use-package quack :ensure t)
 

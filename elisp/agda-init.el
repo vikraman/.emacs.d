@@ -7,6 +7,7 @@
 
 ;; agda2-mode
 (use-package agda2
+  ;; :load-path "~/devel/agdafiles/agda/src/data/emacs-mode/"
   :bind (("M-p" . agda2-previous-goal)
          ("M-n" . agda2-next-goal))
   :config
@@ -14,17 +15,17 @@
   ;; https://en.wikipedia.org/wiki/Mathematical_Alphanumeric_Symbols#Latin_letters
   (setq-default agda-input-user-translations
                 `(("Mih" . ("ℎ"))
-                  ("McB" . ("𝓑"))
-                  ("McE" . ("𝓔"))
+                  ("McB" . ("ℬ"))
+                  ("McE" . ("ℰ"))
                   ("McF" . ("ℱ"))
-                  ("McH" . ("𝓗"))
-                  ("McI" . ("𝓘"))
-                  ("McL" . ("𝓛"))
-                  ("McM" . ("𝓜"))
-                  ("McR" . ("𝓡"))
-                  ("Mce" . ("𝓮"))
-                  ("Mcg" . ("𝓰"))
-                  ("Mco" . ("𝓸"))
+                  ("McH" . ("ℋ"))
+                  ("McI" . ("ℐ"))
+                  ("McL" . ("ℒ"))
+                  ("McM" . ("ℳ"))
+                  ("McR" . ("ℛ"))
+                  ("Mce" . ("ℯ"))
+                  ("Mcg" . ("ℊ"))
+                  ("Mco" . ("ℴ"))
                   ("MfC" . ("ℭ"))
                   ("MfH" . ("ℌ"))
                   ("MfI" . ("ℑ"))
@@ -34,7 +35,8 @@
             '(lambda ()
                (setq agda2-highlight-level 'interactive
                      agda2-highlight-face-groups 'default-faces
-                     agda2-program-args '("--sharing"))))
+                     ;; agda2-program-args '("--sharing")
+                     )))
   (let ((base03    "#002b36")
         (base02    "#073642")
         (base01    "#586e75")

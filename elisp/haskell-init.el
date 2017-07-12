@@ -15,15 +15,19 @@
       :load-path "liquid-tip.el/"))
   (use-package flycheck-liquidhs
     :load-path "flycheck-liquidhs.el/")
-  (use-package ghc
-    :ensure t)
-  (setq intero-package-version "0.1.16")
+  (setq haskell-stylish-on-save t)
   (add-hook 'haskell-mode-hook
             '(lambda ()
                (intero-mode)
-               (ghc-init)
+               ;; (ghc-init)
                (flycheck-select-checker 'haskell-liquid)
                (liquid-types-mode))))
+
+(use-package hindent
+  :ensure t
+  :config
+  (add-hook 'haskell-mode-hook #'hindent-mode)
+  (setq hindent-style "johan-tibell"))
 
 (provide 'haskell-init)
 ;;; haskell-init.el ends here
